@@ -48,6 +48,8 @@ public class WeekOneThursdayAssignment {
 		
 		isLeapYear(input);
 
+		input.close();
+		
 	}
 	
 	public static void calculateAreaAndCircumferenceOfCircle(final double PI, Scanner input) {
