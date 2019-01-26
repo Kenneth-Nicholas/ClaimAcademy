@@ -58,17 +58,27 @@ public class FridayAssignment {
 		
 		int stringLength = enteredString.length();
 		
-		for(int i = 0; i < stringLength - 1; i++) {
+		for(int i = 0; i < stringLength; i++) {
 		
-			if(enteredString.indexOf(enteredString.charAt(i)) != enteredString.lastIndexOf(enteredString.charAt(i))) {
+			char outerLetter = enteredString.charAt(i);
 				
-				isUnique = false;
+			for(int j = i + 1; j < stringLength; j++) {
 				
-				System.out.println("The String you entered is not made up entirely of unique characters.");
-				System.out.print("As a result, the function testing the String you entered returned ");
+				char innerLetter = enteredString.charAt(j);
+				
+				if(outerLetter == innerLetter) {
+					
+					isUnique = false;
+					
+					System.out.println("The String you entered is not made up entirely of unique characters.");
+					System.out.print("As a result, the function testing the String you entered returned ");
+					
+					break;
+					
+				}
 				
 			}
-			
+
 		}
 		
 		if(isUnique == true) {
@@ -77,7 +87,7 @@ public class FridayAssignment {
 			System.out.print("As a result, the function testing the String you entered returned ");
 			
 		}
-		
+
 		return isUnique;
 		
 	}
