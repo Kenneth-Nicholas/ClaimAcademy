@@ -34,7 +34,7 @@ public class ChangeMaker {
 		
 		private static int calculateNumberOfQuarters(double totalChangeDue) {
 			
-			int valueOfQuarter = 25;
+			final int valueOfQuarter = 25;
 			
 			int calculatedNumberOfQuarters = (int) ((totalChangeDue * 100) / valueOfQuarter);
 			
@@ -44,8 +44,8 @@ public class ChangeMaker {
 		
 		private static int calculateNumberOfDimes(double totalChangeDue, int calculatedNumberOfQuarters) {
 			
-			int valueOfQuarter = 25;
-			int valueOfDime = 10;
+			final int valueOfQuarter = 25;
+			final int valueOfDime = 10;
 			
 			int calculatedNumberOfDimes = (int) (((totalChangeDue * 100) - (calculatedNumberOfQuarters * valueOfQuarter)) / valueOfDime);
 			
@@ -55,9 +55,9 @@ public class ChangeMaker {
 
 		private static int calculateNumberOfNickels(double totalChangeDue, int calculatedNumberOfQuarters, int calculatedNumberOfDimes) {
 			
-			int valueOfQuarter = 25;
-			int valueOfDime = 10;
-			int valueOfNickel = 5;
+			final int valueOfQuarter = 25;
+			final int valueOfDime = 10;
+			final int valueOfNickel = 5;
 			
 			int calculatedNumberOfNickels = (int) (((totalChangeDue * 100) - (calculatedNumberOfQuarters * valueOfQuarter) - (calculatedNumberOfDimes * valueOfDime)) / valueOfNickel);
 			
@@ -67,10 +67,10 @@ public class ChangeMaker {
 
 		private static int calculateNumberOfPennies(double totalChangeDue, int calculatedNumberOfQuarters, int calculatedNumberOfDimes, int calculatedNumberOfNickels) {
 			
-			int valueOfQuarter = 25;
-			int valueOfDime = 10;
-			int valueOfNickel = 5;
-			int valueOfPenny = 1;
+			final int valueOfQuarter = 25;
+			final int valueOfDime = 10;
+			final int valueOfNickel = 5;
+			final int valueOfPenny = 1;
 			
 			int calculatedNumberOfPennies = (int) (((totalChangeDue * 100) - (calculatedNumberOfQuarters * valueOfQuarter) - (calculatedNumberOfDimes * valueOfDime) - (calculatedNumberOfNickels * valueOfNickel)) / valueOfPenny);
 			
