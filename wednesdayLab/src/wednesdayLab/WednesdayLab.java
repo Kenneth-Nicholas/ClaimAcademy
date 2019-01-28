@@ -127,9 +127,9 @@ public class WednesdayLab {
 		
 		System.out.println();
 		System.out.println("The result of passing the integer " + y + " to the function isPrime is "
-				+ isPrime(x) + ".");
+				+ isPrime(y) + ".");
 		
-		if(isPrime(x)) {
+		if(isPrime(y)) {
 			
 			System.out.println("As a result, we know that the number " + y + " is a prime number.");
 			
@@ -294,5 +294,3 @@ public class WednesdayLab {
 	}
 	
 }
-
- 
