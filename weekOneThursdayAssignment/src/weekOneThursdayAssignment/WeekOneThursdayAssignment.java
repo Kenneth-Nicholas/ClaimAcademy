@@ -169,7 +169,7 @@ public class WeekOneThursdayAssignment {
 		
 		System.out.println();
 		
-		if((year % 4 == 0) && (year % 100 == 0) && (year % 400 == 0)) {
+		if(((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
 			
 			System.out.println("The year " + year + " is a leap year.");
 			
