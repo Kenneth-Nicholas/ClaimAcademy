@@ -9,10 +9,8 @@ public class ChangeMaker {
 			Scanner input = new Scanner(System.in);
 			
 			System.out.println("This program determines the amount of quarters, dimes, nickles, and pennies that will be returned to a");
-			System.out.println("customer after a customer makes a purchase.");
-			System.out.println();
-			System.out.println("Please enter the change due to the customer (Please note, change should be written with a decimal point e.g., .99 cents) : ");
-			System.out.println();
+			System.out.println("customer after a customer makes a purchase.\n");
+			System.out.println("Please enter the change due to the customer (Please note, change should be written with a decimal point e.g., .99 cents) : \n");
 			
 			double totalChangeDue = input.nextDouble();
 			
