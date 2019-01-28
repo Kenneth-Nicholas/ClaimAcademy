@@ -280,6 +280,8 @@ public class WednesdayLab {
 			if (isFactor(i, y)) {               
 	                
 				isPrime = false;
+				
+				break;
 	    	
 			} else {                               
 
