@@ -1,5 +1,5 @@
 // 1. Write a method to remove a given character from a String.
-//    E.g., remove all 'a' from Averange should return vernge.
+//    E.g., remove all 'a' from Average should return verge.
 //
 // 2. Write a method to remove duplicate characters from a String.
 //
@@ -29,7 +29,7 @@ public class WeekTwoMondayLab {
 		Scanner input = new Scanner(System.in);
 		
 		
-		
+// 1.		
 		System.out.println("This program removes all 'a' characters in a String. Please enter a string: ");
 		
 		String originalString = input.nextLine();
@@ -46,7 +46,7 @@ public class WeekTwoMondayLab {
 //		System.out.println(removeCharFromArray(word, 'a'));
 		
 		
-		
+// 2.		
 		System.out.println("This program removes all duplicate characters in a String. Please enter a string: ");
 		
 		originalString = input.nextLine();
@@ -54,7 +54,7 @@ public class WeekTwoMondayLab {
 		System.out.println(removeDuplicateCharacters(originalString) + "\n");
 		
 		
-		
+// 3.		
 		System.out.println("This program counts the number of vowel and consonant characters in a String. Please enter a string: ");
 		
 		originalString = input.nextLine();
@@ -62,7 +62,7 @@ public class WeekTwoMondayLab {
 		countVowelsAndConsonants(originalString);
 		
 		
-		
+// 4.		
 		System.out.println("This program takes an entered String and prints only the characters that are not duplicated.");
 		System.out.println("The duplicated characters are appended onto the end of the String");		
 		System.out.println("Please enter a string: ");
@@ -72,7 +72,7 @@ public class WeekTwoMondayLab {
 		System.out.println(displayNonDuplicateCharactersBeforeDuplicates(originalString) + "\n");
 		
 		
-		
+// 5.		
 		System.out.println("This program takes an entered String and counts the number of a characters in it.");
 		
 		originalString = input.nextLine();
@@ -82,17 +82,17 @@ public class WeekTwoMondayLab {
 		System.out.println(aCharactersInCharacterArray(characterArray) + " a characters in the string \"" + originalString + "\"\n");
 		
 		
-		
+// 6.		
 		System.out.println("This program takes an entered String and removes all the spaces from it.");
 		
 		originalString = input.nextLine();
 		
 		char[] characterArrayTwo = originalString.toCharArray();
 		
-		System.out.println(removeSpaceCharactersFromCharacterArray(characterArrayTwo));
+		System.out.println(removeSpaceCharactersFromCharacterArray(characterArrayTwo) + "\n");
 		
 		
-		
+// 7.		
 		System.out.println("This program takes an entered character array and displays only the characters that are duplicated throught the array.");
 		System.out.println("Please enter a character array (a character array is equivalent to entereing a String): ");
 		
@@ -105,7 +105,7 @@ public class WeekTwoMondayLab {
 		System.out.println();
 		
 		
-		
+// 8.		
 		System.out.println("This program takes an entered String, reverses it, and then prints the resulting reversed String.");
 		System.out.println("Please enter a String: ");
 		
@@ -119,6 +119,7 @@ public class WeekTwoMondayLab {
 
 	}
 	
+// 1.	
 	public static String removeACharacters(String originalString) {
 		
 		int length = originalString.length();
@@ -165,6 +166,7 @@ public class WeekTwoMondayLab {
 //		
 //	}
 	
+// 2.	
 	public static String removeDuplicateCharacters(String originalString) {
 		
 		String returnString = "";
@@ -199,6 +201,7 @@ public class WeekTwoMondayLab {
 		
 	}
 	
+// 3.	
 	public static void countVowelsAndConsonants(String originalString) {
 		
 		int numberOfVowels = 0;
@@ -212,33 +215,43 @@ public class WeekTwoMondayLab {
 			case 'A': 
 				numberOfVowels++;
 				break;
+				
 			case 'a':
 				numberOfVowels++;
 				break;
+				
 			case 'E':
 				numberOfVowels++;
 				break;
+				
 			case 'e':
 				numberOfVowels++;
 				break;
+				
 			case 'I':
 				numberOfVowels++;
 				break;
+				
 			case 'i':
 				numberOfVowels++;
 				break;
+				
 			case 'O':
 				numberOfVowels++;
 				break;
+				
 			case 'o':
 				numberOfVowels++;
 				break;
+				
 			case 'U':
 				numberOfVowels++;
 				break;
+				
 			case 'u':
 				numberOfVowels++;
 				break;
+				
 			default:
 				numberOfConsonants++;
 				break;
@@ -252,6 +265,7 @@ public class WeekTwoMondayLab {
 		
 	}
 	
+// 4.	
 	public static String displayNonDuplicateCharactersBeforeDuplicates(String originalString) {
 		
 		String returnString = "";
@@ -292,6 +306,7 @@ public class WeekTwoMondayLab {
 		
 	}
 	
+// 5.	
 	public static int aCharactersInCharacterArray(char[] characterArray) {
 		
 		int length = characterArray.length;
@@ -314,6 +329,7 @@ public class WeekTwoMondayLab {
 		
 	}
 	
+// 6.	
 	public static String removeSpaceCharactersFromCharacterArray(char[] characterArray) {
 		
 		String result = "";
@@ -334,6 +350,7 @@ public class WeekTwoMondayLab {
 		
 	}
 	
+// 7.	
 	public static void findDuplicateCharactersInCharArray(char[] characterArrayThree) {
 
 		int length = characterArrayThree.length;
@@ -354,6 +371,7 @@ public class WeekTwoMondayLab {
 		
 	}
 	
+// 8.	
 	public static String displayWordsInReverseOrder(String originalString) {
 		
 		String reversedString = "";
