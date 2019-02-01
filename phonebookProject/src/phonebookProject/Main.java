@@ -1,6 +1,3 @@
-// How do I create a new name for a person array each time I need to add or remove a person so that the name is unique and increments?
-// See line 60 & line 92 of Main.java and line 26 of Phonebook.java. My array starts out empty so I get a null pointer exception.
-
 package phonebookProject;
 
 import java.util.Scanner;
@@ -26,11 +23,9 @@ public class Main {
             System.out.println("5 - Find record by last name");
             System.out.println("6 - Update a record");
             System.out.println("7 - Exit");
-
             selection = input.nextInt();
             System.out.println();
             input.nextLine();
-
             switch(selection) {
                 case 1:
                     System.out.print("Enter the person's first name: ");
@@ -55,8 +50,8 @@ public class Main {
                     newPerson = new Person(firstName, middleName, lastName, address, phoneNumber);
                     newPersonArray = phonebook.addPerson(newPerson, newPersonArray, firstAddition, length);
                     System.out.println("You have successfully added a new record");
+                    length++;
                     break;
-
                 case 2:
                     System.out.print("Enter the first name of the person whose record you would like to remove: ");
                     String firstNameForRemoval = input.nextLine();
@@ -79,15 +74,28 @@ public class Main {
                     String phoneNumberForRemoval = input.nextLine();
                     Person newPersonForRemoval = new Person(firstNameForRemoval, middleNameForRemoval, lastNameForRemoval, addressForRemoval, phoneNumberForRemoval);
                     newPersonArray = phonebook.removePerson(newPersonForRemoval, newPersonArray, length);
-                    System.out.println("You have successfully removed a record \n");
+                    // if size of array is one less, length--;
                     break;
                 case 3:
+                	System.out.print("Enter a telephone to find a record: ");
+                	phoneNumber = input.nextLine();
+                	phonebook.findRecordsByPhoneNumber(newPersonArray, phoneNumber, length);
+                	// Find records by telephone number
                     break;
                 case 4:
+                	System.out.print("Enter a first name to find a record: ");
+                	firstName = input.nextLine();
+                	phonebook.findRecordsByFirstName(newPersonArray, firstName, length);
+                	// Find records by first name
                     break;
                 case 5:
+                	System.out.print("Enter a last name to find a record: ");
+                	lastName = input.nextLine();
+                	phonebook.findRecordsByLastName(newPersonArray, lastName, length);
+                	// Find records by last name
                     break;
                 case 6:
+                	// Update a record
                     break;
                 case 7:
                     System.out.println("Exiting program");
@@ -96,7 +104,7 @@ public class Main {
                     System.out.println("Error, invalid selection entry. Exiting program.");
                     break;
             }
-
-        } while((selection < 7) && (selection > 0));
+        } while((selection < 7) && (selection > 0));      
+        input.close();
     }
 }
