@@ -22,7 +22,7 @@ public class Address {
 		return this.streetAddress;
 	}
 	
-	public void setStreetName(String streetAddress) {
+	public void setStreetAddress(String streetAddress) {
 		this.streetAddress = streetAddress;
 	}
 	
@@ -56,5 +56,10 @@ public class Address {
 	
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	@Override
+	public String toString() {
+		return streetAddress + ", " + city + ", " + state + ", " + zipCode + ", " + country;
 	}
 }
