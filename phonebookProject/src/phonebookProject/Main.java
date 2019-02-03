@@ -11,14 +11,6 @@
 // Try to fix the find record selections by also successfully comparing the contents of the both of the person object's
 // address instance variable
 //
-//
-//
-// Right now, removePerson is buggy, says unable to find person.
-// Remove last person working
-// If you add the same person twice, then call removePerson, it says you removed the lastPerson?
-//
-//
-//
 // Project 2 PhoneBook Application
 // Write a program to simulate the actions of a phone book.
 // Your program should be able to :

@@ -39,7 +39,13 @@ public class Phonebook {
                 newPersonArray[i].setFirstName(personArray[i].getFirstName());
                 newPersonArray[i].setMiddleName(personArray[i].getMiddleName());
                 newPersonArray[i].setLastName(personArray[i].getLastName());
-                newPersonArray[i].setAddress(personArray[i].getAddress());
+                String streetAddress = personArray[i].getAddress().getStreetAddress();
+                String city = personArray[i].getAddress().getCity();
+                String state = personArray[i].getAddress().getState();
+                String zipCode = personArray[i].getAddress().getZipCode();
+                String country = personArray[i].getAddress().getCountry();
+                Address newAddress = new Address(streetAddress, city, state, zipCode, country);
+                newPersonArray[i].setAddress(newAddress);;
                 newPersonArray[i].setPhoneNumber(personArray[i].getPhoneNumber());
             }
             newPersonArray[personArray.length].setFirstName(person.getFirstName());
@@ -69,7 +75,7 @@ public class Phonebook {
 
     public Person[] removePerson(Person person, Person[] personArray) {
         int indexMarker = -1;
-        Person[] newPersonArray = new Person[personArray.length - 1];
+        Person[] newPersonArray = new Person[personArray.length];
         for(int i = 0; i < newPersonArray.length; i++) {
         	Person newPerson = new Person();
         	newPersonArray[i] = newPerson;
@@ -78,11 +84,6 @@ public class Phonebook {
             if((person.getFirstName().equals(personArray[i].getFirstName())) &&
                     (person.getMiddleName().equals(personArray[i].getMiddleName())) &&
                     (person.getLastName().equals(personArray[i].getLastName())) &&
-                    (person.getAddress().getStreetAddress().equals(personArray[i].getAddress().getStreetAddress())) &&
-                    (person.getAddress().getCity().equals(personArray[i].getAddress().getCity())) &&
-                    (person.getAddress().getState().equals(personArray[i].getAddress().getState())) &&
-                    (person.getAddress().getZipCode().equals(personArray[i].getAddress().getZipCode())) &&
-                    (person.getAddress().getCountry().equals(personArray[i].getAddress().getCountry())) &&
                     (person.getPhoneNumber().equals(personArray[i].getPhoneNumber()))) {
                 indexMarker = i;
             }
@@ -109,6 +110,7 @@ public class Phonebook {
     }
     
     public void findRecordsByPhoneNumber(Person[] newPersonArray, String phoneNumber) {
+    	boolean foundRecord = false;
     	for(int i = 0; i < newPersonArray.length; i++) {
     		if(phoneNumber.equals(newPersonArray[i].getPhoneNumber())) {
     			System.out.print(newPersonArray[i].getFirstName() + " ");
@@ -116,37 +118,46 @@ public class Phonebook {
     			System.out.print(newPersonArray[i].getLastName() + ", ");
     			System.out.print(newPersonArray[i].getAddress() + ", ");
     			System.out.print(newPersonArray[i].getPhoneNumber() + "\n\n");
-    		} else {
-    		    System.out.println("The phone number you entered did not match any records.");
-    		}
+    			foundRecord = true;
+    		} 
     	}
+    	if(!foundRecord) {
+    		System.out.println("The phone number you entered did not match any records.");
+    	}
+    	
     }
     
     public void findRecordsByFirstName(Person[] newPersonArray, String firstName) {
+    	boolean foundRecord = false;
     	for(int i = 0; i < newPersonArray.length; i++) {
     		if(firstName.equals(newPersonArray[i].getFirstName())) {
     			System.out.print(newPersonArray[i].getFirstName() + " ");
     			System.out.print(newPersonArray[i].getMiddleName() + " ");
     			System.out.print(newPersonArray[i].getLastName() + " ");
     			System.out.print(newPersonArray[i].getAddress() + " ");
-    			System.out.print(newPersonArray[i].getPhoneNumber() + " ");
-    		} else {
-            System.out.println("The first name you entered did not match any records.");
-    		}
+    			System.out.print(newPersonArray[i].getPhoneNumber() + "\n\n");
+    			foundRecord = true;
+    		} 
+    	}
+    	if(!foundRecord) {
+    		System.out.println("The phone number you entered did not match any records.");
     	}
     }
     
     public void findRecordsByLastName(Person[] newPersonArray, String lastName) {
+    	boolean foundRecord = false;
     	for(int i = 0; i < newPersonArray.length; i++) {
     		if(lastName.equals(newPersonArray[i].getLastName())) {
     			System.out.print(newPersonArray[i].getFirstName() + " ");
     			System.out.print(newPersonArray[i].getMiddleName() + " ");
     			System.out.print(newPersonArray[i].getLastName() + " ");
     			System.out.print(newPersonArray[i].getAddress() + " ");
-    			System.out.print(newPersonArray[i].getPhoneNumber() + " ");
-    		} else {
-            System.out.println("The last name you entered did not match any records.");
-    		}
+    			System.out.print(newPersonArray[i].getPhoneNumber() + "\n\n");
+    			foundRecord = true;
+    		} 
+    	}
+    	if(!foundRecord) {
+    		System.out.println("The phone number you entered did not match any records.");
     	}
     }
 }
