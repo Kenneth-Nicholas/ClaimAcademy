@@ -31,6 +31,10 @@ public class Phonebook {
 
     public Person[] addPerson(Person person, Person[] personArray) {
             Person[] newPersonArray = new Person[personArray.length + 1];
+            for(int i = 0; i < newPersonArray.length; i++) {
+            	Person newPerson = new Person();
+            	newPersonArray[i] = newPerson;
+            }
             for (int i = 0; i < personArray.length; i++) {
                 newPersonArray[i].setFirstName(personArray[i].getFirstName());
                 newPersonArray[i].setMiddleName(personArray[i].getMiddleName());
@@ -66,7 +70,10 @@ public class Phonebook {
     public Person[] removePerson(Person person, Person[] personArray) {
         int indexMarker = -1;
         Person[] newPersonArray = new Person[personArray.length - 1];
-        newPersonArray[personArray.length - 2] = person;
+        for(int i = 0; i < newPersonArray.length; i++) {
+        	Person newPerson = new Person();
+        	newPersonArray[i] = newPerson;
+        }
         for(int i = 0; i < personArray.length; i++) {
             if((person.getFirstName().equals(personArray[i].getFirstName())) &&
                     (person.getMiddleName().equals(personArray[i].getMiddleName())) &&
@@ -85,7 +92,7 @@ public class Phonebook {
             return personArray;
         }
         if(indexMarker != -1) {
-            for(int i = 0; i < personArray.length - 1; i++) {
+            for(int i = 0; i < personArray.length; i++) {
                 if(i == indexMarker){
                     continue;
                 } else {

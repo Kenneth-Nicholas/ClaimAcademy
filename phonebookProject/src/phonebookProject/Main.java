@@ -49,10 +49,11 @@
 //
 // Optional add additional features to your program, for storing cell, home, work and fax numbers. 
 // Also features for storing events like birthday, anniversary, email… etc   
-
-// The problem is my array is never bigger than 1 element so it's overwritten and you never have 2 people in the array.
-
-
+//
+// Problem with remove person - requested record could not be found when you add 2 or more people to array.
+// Because the address of the second person is also being stored as the address for the first person.
+//
+//
 
 package phonebookProject;
 
@@ -67,9 +68,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int selection;
-        int length = 1;
+        boolean firstAddition = true;
         Phonebook phonebook = new Phonebook();
-        Person[] newPersonArray = new Person[length];
+        Person[] newPersonArray = new Person[1];
         Person newPerson = new Person();
         newPersonArray[0] = newPerson;
 
@@ -110,12 +111,13 @@ public class Main {
                     Address address = new Address(streetAddress, city, state, zipCode, country);
                     newPerson.setAddress(address);
                     newPerson = new Person(firstName, middleName, lastName, address, phoneNumber);
-                    if(newPersonArray.length == 1) {
-                        newPersonArray = phonebook.addFirstPerson(newPerson);
+                    if(firstAddition) {
+                    	newPersonArray = phonebook.addFirstPerson(newPerson);
                     } else {
-                        newPersonArray = phonebook.addPerson(newPerson, newPersonArray);
+                    	newPersonArray = phonebook.addPerson(newPerson, newPersonArray);
                     }
                 System.out.println("You have successfully added a new record\n");
+                firstAddition = false;
                 break;
                 case 2:
                     System.out.println("Remove a record by entering a person's information in the following format: ");
