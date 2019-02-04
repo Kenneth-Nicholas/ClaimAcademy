@@ -8,9 +8,6 @@
 // Otherwise, using object.getThing().equals(objectArray[element].getThing()); will always return false because with
 // objects, it ends up comparing references, not the contents of the objects themselves.
 //
-// Try to fix the find record selections by also successfully comparing the contents of the both of the person object's
-// address instance variable
-//
 // Project 2 PhoneBook Application
 // Write a program to simulate the actions of a phone book.
 // Your program should be able to :
@@ -27,10 +24,13 @@
 // Show all records in ascending order
 // Exit 
 //
-// Your program should operate on the console. It should display all the choices when the program loads. E.g., 1. Add new record
-// 2. Delete a record
-// Etc.. where 1 representing the action for adding a record and 2 representing the action
-// for deleting a record.
+// Your program should operate on the console. 
+// It should display all the choices when the program loads. 
+// E.g., 1. Add new record
+//       2. Delete a record
+//       Etc.. 
+// 
+// Where 1 representing the action for adding a record and 2 representing the action for deleting a record.
 // Your program should run until the user selects the exit option. 
 // Your program should have a minimum of 2 classes a Person class, an Address  class.
 //
@@ -44,10 +44,10 @@
 // Optional add additional features to your program, for storing cell, home, work and fax numbers. 
 // Also features for storing events like birthday, anniversary, email� etc   
 //
-// Problem with remove person - not setting address correctly, setting to a reference, not values, have to set each
-// individual variable one by one. Bug is due to references. All phonebook records end up with the latest entered address
-// because they're set to a reference, not by actual values. Need to get specific rather than set and get address.
-// set street address, set city, set state, set zipcode, etc. 
+//
+//
+// Just need to add option to update a record based on phone number (option 10)
+// and also need to add the option to display all records in ascending order (option 11)
 
 
 package phonebookProject;
