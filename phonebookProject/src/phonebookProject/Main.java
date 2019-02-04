@@ -108,6 +108,8 @@ public class Main {
                     
                     String recordHolder = input.nextLine();
                     
+                    System.out.println();
+                    
                     String[] recordData = new String[6];
                     
                     recordData = recordHolder.split(", ");
@@ -161,9 +163,11 @@ public class Main {
                 	
                     // 2  - Search for record by first name
 
-                	System.out.print("Enter a first name to find a record:\n");
+                	System.out.println("Enter a first name to find a record:\n");
                 	
                 	firstName = input.nextLine();
+                	
+                	System.out.println();
                 	
                 	phonebook.findRecordsByFirstName(newPersonArray, firstName);
                 	
@@ -173,9 +177,11 @@ public class Main {
                 	
                     // 3  - Search for record by last name
                 	
-                	System.out.print("Enter a last name to find a record:\n");
+                	System.out.println("Enter a last name to find a record:\n");
                 	
                 	lastName = input.nextLine();
+                	
+                	System.out.println();
                 	
                 	phonebook.findRecordsByLastName(newPersonArray, lastName);
                 	
@@ -185,10 +191,12 @@ public class Main {
                 	
                 	// 4  - Search for record by full name
                 	
-                	System.out.print("Enter a full name to find a record in the following format:");
+                	System.out.println("Enter a full name to find a record in the following format:");
                 	System.out.println("\"Firstname Middlename Lastname\"\n");
                 	
                 	String fullNameForSearch = input.nextLine();
+                	
+                	System.out.println();
                 	
                 	String[] stringArrayForFullNameSearch = fullNameForSearch.split(" ");
                 	
@@ -206,9 +214,11 @@ public class Main {
                 	
                 	// 5  - Search for record by phone number
                 	
-                	System.out.print("Enter a telephone to find a record:\n");
+                	System.out.println("Enter a telephone to find a record:\n");
                 	
                 	phoneNumber = input.nextLine();
+                	
+                	System.out.println();
                 	
                 	phonebook.findRecordsByPhoneNumber(newPersonArray, phoneNumber);
                 	
@@ -218,9 +228,11 @@ public class Main {
                 	
                 	// 6  - Search for record by city
                 	
-                	System.out.print("Enter a city to find a record:\n");
+                	System.out.println("Enter a city to find a record:\n");
                 	
                 	String cityForSearch = input.nextLine();
+                	
+                	System.out.println();
                 	
                 	phonebook.findRecordsByCity(newPersonArray, cityForSearch);
                 	
@@ -230,11 +242,13 @@ public class Main {
                 	
                 	// 7  - Search for record by state
                 	
-                	System.out.print("Enter a state to find a record:\n");
+                	System.out.println("Enter a state to find a record:\n");
                 	
                 	String stateForSearch = input.nextLine();
                 	
-                	phonebook.findRecordsByCity(newPersonArray, stateForSearch);
+                	System.out.println();
+                	
+                	phonebook.findRecordsByState(newPersonArray, stateForSearch);
                     
                     break;
                     
@@ -246,6 +260,8 @@ public class Main {
                     System.out.println("111-777-1111\n");
                     
                     String phoneNumberHolderForRemoval = input.nextLine();
+                    
+                    System.out.println();
                     
                     if(newPersonArray.length == 1) {
                     	
