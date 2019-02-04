@@ -8,42 +8,14 @@
 // Otherwise, using object.getThing().equals(objectArray[element].getThing()); will always return false because with
 // objects, it ends up comparing references, not the contents of the objects themselves.
 //
-// Project 2 PhoneBook Application
-// Write a program to simulate the actions of a phone book.
-// Your program should be able to :
+// Test case input for the application:
 //
-// Add a new record 
-// Search for an existing record
-// Search for records by first name *
-// Search for records by last name *
-// Search for records by full name *note name is not unique therefore the result should be an array of Person Objects.
-// Search for records by telephone number
-// Search for records by city or state
-// Delete a record for a given telephone number
-// Update a record for a given telephone number
-// Show all records in ascending order
-// Exit 
-//
-// Your program should operate on the console. 
-// It should display all the choices when the program loads. 
-// E.g., 1. Add new record
-//       2. Delete a record
-//       Etc.. 
-// 
-// Where 1 representing the action for adding a record and 2 representing the action for deleting a record.
-// Your program should run until the user selects the exit option. 
-// Your program should have a minimum of 2 classes a Person class, an Address  class.
-//
-// Test case :
 // John Doe, 114 Market St, St Louis, MO, 63403, 6366435698
 // John E Doe, 324 Main St, St Charles, MO,63303, 8475390126
 // John Michael West Doe, 574 Pole ave, St. Peters, MO, 63333, 5628592375
 //
 // Searching for John should return a list of all 3 records above, displaying the telephone number in this order (636)-453-8563.
-//
-// Optional add additional features to your program, for storing cell, home, work and fax numbers. 
-// Also features for storing events like birthday, anniversary, email� etc   
-//
+// 
 //
 //
 // Just need to fix sort algorithm so that it sorts records in ascending order by last name.
@@ -103,7 +75,7 @@ public class Main {
                 	// 1 - Add a new record
                 	
                     System.out.println("Add a new record by entering a person's information in the following format:");
-                    System.out.println("FirstName MiddleName LastName, 1111 StreetName Drive, AmazingWeather City, CA, 77777, 111-777-1111\n");
+                    System.out.println("FirstName MiddleName LastName, 1111 StreetName Drive, AmazingWeather City, CA, 77777, (111)-777-1111\n");
                     
                     String recordHolder = input.nextLine();
                     
@@ -256,7 +228,7 @@ public class Main {
                 	// 8  - Delete a record for a given phone number
                 	
                     System.out.println("Remove a record by entering a person's phone number in the following format: ");
-                    System.out.println("111-777-1111\n");
+                    System.out.println("(111)-777-1111\n");
                     
                     String phoneNumberHolderForRemoval = input.nextLine();
                     
@@ -282,13 +254,13 @@ public class Main {
                 	
                 	// 9  - Update a record for a given phone number
                 	
-                	System.out.println("Enter a phone number in the following format in order to update a record \"111-333-7777\":\n");
+                	System.out.println("Enter a phone number in the following format in order to update a record \"(111)-333-7777\":\n");
                 	
                 	String phoneNumberForUpdating = input.nextLine();
                 	
                 	System.out.println();
                 	System.out.println("Enter the information that you would like the record listed under the phone number: " + phoneNumberForUpdating + " to be updated to.");
-                	System.out.println("\"FirstName MiddleName LastName, 1111 StreetName Drive, AmazingWeather City, CA, 77777, 111-777-1111\"\n");
+                	System.out.println("\"FirstName MiddleName LastName, 1111 StreetName Drive, AmazingWeather City, CA, 77777, (111)-777-1111\"\n");
                 	
                     String recordHolder2 = input.nextLine();
                     
@@ -353,7 +325,7 @@ public class Main {
                     
             }
             
-        } while((selection < 11) && (selection > 0)); 
+        } while(selection != 11); 
         
         input.close();
         
