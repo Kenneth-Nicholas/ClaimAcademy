@@ -14,17 +14,19 @@
 // Project 2 PhoneBook Application
 // Write a program to simulate the actions of a phone book.
 // Your program should be able to :
-// Add new entries 
-// Search for an existing entry
-// Search by first name *
-// Search by last name *
-// Search by full name *note name is not unique therefore the result should be an array of Person Objects.
-// Search by telephone number
-// Search by city or state
+//
+// Add a new record 
+// Search for an existing record
+// Search for records by first name *
+// Search for records by last name *
+// Search for records by full name *note name is not unique therefore the result should be an array of Person Objects.
+// Search for records by telephone number
+// Search for records by city or state
 // Delete a record for a given telephone number
 // Update a record for a given telephone number
 // Show all records in ascending order
-// An option to exit the program 
+// Exit 
+//
 // Your program should operate on the console. It should display all the choices when the program loads. E.g., 1. Add new record
 // 2. Delete a record
 // Etc.. where 1 representing the action for adding a record and 2 representing the action
@@ -77,13 +79,17 @@ public class Main {
         do {
         	
             System.out.println("Please make a selection below by entering one of the following numbers: \n");
-            System.out.println("1 - Add a new record");
-            System.out.println("2 - Delete a record");
-            System.out.println("3 - Find record by telephone number");
-            System.out.println("4 - Find record by first name");
-            System.out.println("5 - Find record by last name");
-            System.out.println("6 - Update a record");
-            System.out.println("7 - Exit");
+            System.out.println("1  - Add a new record");
+            System.out.println("2  - Search for record by first name");
+            System.out.println("3  - Search for record by last name");
+            System.out.println("4  - Search for record by full name");
+            System.out.println("5  - Search for record by phone number");
+            System.out.println("6  - Search for record by city");
+            System.out.println("7  - Search for record by state");
+            System.out.println("8  - Delete a record for a given phone number");
+            System.out.println("9  - Update a record for a given phone number");
+            System.out.println("10 - Show all records in ascending order");
+            System.out.println("11 - Exit\n");
             
             selection = input.nextInt();
             
@@ -95,8 +101,10 @@ public class Main {
             
                 case 1:
                 	
-                    System.out.println("Add a new record by entering a person's information in the following format: ");
-                    System.out.println("FirstName MiddleName LastName, 1111 StreetName Drive, AmazingWeather City, CA, 77777, 111-777-1111");
+                	// 1 - Add a new record
+                	
+                    System.out.println("Add a new record by entering a person's information in the following format:");
+                    System.out.println("FirstName MiddleName LastName, 1111 StreetName Drive, AmazingWeather City, CA, 77777, 111-777-1111\n");
                     
                     String recordHolder = input.nextLine();
                     
@@ -151,71 +159,9 @@ public class Main {
                 
                 case 2:
                 	
-                    System.out.println("Remove a record by entering a person's information in the following format: ");
-                    System.out.println("FirstName MiddleName LastName, 1111 StreetName Drive, AmazingWeather City, CA, 77777, 111-777-1111");
-                    
-                    String recordHolderForRemoval = input.nextLine();
-                    
-                    String[] recordDataForRemoval = new String[6];
-                    
-                    recordDataForRemoval = recordHolderForRemoval.split(", ");
-                    
-                    if(recordDataForRemoval[5] == null) {
-                    	
-                        System.out.println("Error, you did not enter the record correctly.");
-                        
-                    }
-                    
-                    String nameHolderForRemoval = recordDataForRemoval[0];
-                    
-                    String[] nameDataForRemoval = new String[3];
-                    
-                    nameDataForRemoval = nameHolderForRemoval.split(" ");
-                    
-                    String firstNameForRemoval = nameDataForRemoval[0];
-                    String middleNameForRemoval = nameDataForRemoval[1];
-                    String lastNameForRemoval = nameDataForRemoval[2];
-                    
-                    String streetAddressForRemoval = recordDataForRemoval[1];
-                    String cityForRemoval = recordDataForRemoval[2];
-                    String stateForRemoval = recordDataForRemoval[3];
-                    String zipCodeForRemoval = recordDataForRemoval[4];
-                    
-                    String phoneNumberForRemoval = recordDataForRemoval[5];
-                    
-                    Address addressForRemoval = new Address(streetAddressForRemoval, cityForRemoval, stateForRemoval, zipCodeForRemoval);
-                   
-                    Person newPersonForRemoval = new Person(firstNameForRemoval, middleNameForRemoval, lastNameForRemoval, addressForRemoval, phoneNumberForRemoval);
-                    
-                    if(newPersonArray.length == 1) {
-                    	
-                        phonebook.removeLastPerson(newPersonForRemoval, newPersonArray);
-                        
-                    } else if (newPersonArray.length == 0) {
-                    	
-                        System.out.println("There are currently no records in the phone book, and therefore, it is impossible to remove a record.");
-                    
-                    } else {
-                    	
-                        newPersonArray = phonebook.removePerson(newPersonForRemoval, newPersonArray);
-                        
-                    }
-                    
-                    break;
-                    
-                case 3:
-                	
-                	System.out.print("Enter a telephone to find a record: ");
-                	
-                	phoneNumber = input.nextLine();
-                	
-                	phonebook.findRecordsByPhoneNumber(newPersonArray, phoneNumber);
-                	
-                    break;
-                    
-                case 4:
-                	
-                	System.out.print("Enter a first name to find a record: ");
+                    // 2  - Search for record by first name
+
+                	System.out.print("Enter a first name to find a record:\n");
                 	
                 	firstName = input.nextLine();
                 	
@@ -223,9 +169,11 @@ public class Main {
                 	
                     break;
                     
-                case 5:
+                case 3:
                 	
-                	System.out.print("Enter a last name to find a record: ");
+                    // 3  - Search for record by last name
+                	
+                	System.out.print("Enter a last name to find a record:\n");
                 	
                 	lastName = input.nextLine();
                 	
@@ -233,13 +181,101 @@ public class Main {
                 	
                     break;
                     
+                case 4:
+                	
+                	// 4  - Search for record by full name
+                	
+                	System.out.print("Enter a full name to find a record in the following format:");
+                	System.out.println("\"Firstname Middlename Lastname\"\n");
+                	
+                	String fullNameForSearch = input.nextLine();
+                	
+                	String[] stringArrayForFullNameSearch = fullNameForSearch.split(" ");
+                	
+                	String firstNameForSearch = stringArrayForFullNameSearch[0];
+                	
+                	String middleNameForSearch = stringArrayForFullNameSearch[1];
+                	
+                	String lastNameForSearch = stringArrayForFullNameSearch[2];
+                	
+                	phonebook.findRecordsByFullName(newPersonArray, firstNameForSearch, middleNameForSearch, lastNameForSearch);
+                	
+                    break;
+                    
+                case 5:
+                	
+                	// 5  - Search for record by phone number
+                	
+                	System.out.print("Enter a telephone to find a record:\n");
+                	
+                	phoneNumber = input.nextLine();
+                	
+                	phonebook.findRecordsByPhoneNumber(newPersonArray, phoneNumber);
+                	
+                    break;
+                    
                 case 6:
                 	
-                	// Update a record
+                	// 6  - Search for record by city
+                	
+                	System.out.print("Enter a city to find a record:\n");
+                	
+                	String cityForSearch = input.nextLine();
+                	
+                	phonebook.findRecordsByCity(newPersonArray, cityForSearch);
                 	
                     break;
                     
                 case 7:
+                	
+                	// 7  - Search for record by state
+                	
+                	System.out.print("Enter a state to find a record:\n");
+                	
+                	String stateForSearch = input.nextLine();
+                	
+                	phonebook.findRecordsByCity(newPersonArray, stateForSearch);
+                    
+                    break;
+                    
+                case 8:
+                	
+                	// 8  - Delete a record for a given phone number
+                	
+                    System.out.println("Remove a record by entering a person's phone number in the following format: ");
+                    System.out.println("111-777-1111\n");
+                    
+                    String phoneNumberHolderForRemoval = input.nextLine();
+                    
+                    if(newPersonArray.length == 1) {
+                    	
+                        phonebook.removeLastPerson(newPersonArray, phoneNumberHolderForRemoval);
+                        
+                    } else if (newPersonArray.length == 0) {
+                    	
+                        System.out.println("There are currently no records in the phone book, and therefore, it is impossible to remove a record.");
+                    
+                    } else {
+                    	
+                        newPersonArray = phonebook.removePerson(newPersonArray, phoneNumberHolderForRemoval);
+                        
+                    }
+                    
+                	break;
+
+                case 9:
+                	
+                	// 9  - Update a record for a given phone number
+                	
+                	break;
+                	
+                case 10:
+                	
+                	// 10 - Show all records in ascending order
+                	
+                	break;
+                	
+                case 11:
                 	
                     System.out.println("Exiting program");
                     
@@ -253,7 +289,7 @@ public class Main {
                     
             }
             
-        } while((selection < 7) && (selection > 0)); 
+        } while((selection < 11) && (selection > 0)); 
         
         input.close();
         

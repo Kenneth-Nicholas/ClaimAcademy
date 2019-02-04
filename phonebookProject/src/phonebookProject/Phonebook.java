@@ -103,29 +103,22 @@ public class Phonebook {
             
     }
 
-    public void removeLastPerson(Person person, Person[] personArray) {
+    public void removeLastPerson(Person[] personArray, String phoneNumberForRemoval) {
     	
-        if((person.getFirstName().equals(personArray[0].getFirstName())) &&
-                (person.getMiddleName().equals(personArray[0].getMiddleName())) &&
-                (person.getLastName().equals(personArray[0].getLastName())) &&
-                (person.getAddress().getStreetAddress().equals(personArray[0].getAddress().getStreetAddress())) &&
-                (person.getAddress().getCity().equals(personArray[0].getAddress().getCity())) &&
-                (person.getAddress().getState().equals(personArray[0].getAddress().getState())) &&
-                (person.getAddress().getZipCode().equals(personArray[0].getAddress().getZipCode())) &&
-                (person.getPhoneNumber().equals(personArray[0].getPhoneNumber()))) {
-        	
-            System.out.println("The array containing the last phone book record has successfully been replaced by an");
-            System.out.println("array containing a single element which is currently empty.\n");
-            
-        } else {
-        	
-            System.out.println("The requested record could not be found.");
-            
-        }
-        
+    	for(int i = 0; i < personArray.length; i++) {
+    	
+    		if(personArray[i].getPhoneNumber() == phoneNumberForRemoval) {
+                System.out.println("The array containing the last phone book record has successfully been deleted");
+    			continue;
+    		} else {
+    			System.out.println("The requested record could not be found.");
+    		}
+    		
+    	}
+   
     }
 
-    public Person[] removePerson(Person person, Person[] personArray) {
+    public Person[] removePerson(Person[] personArray, String phoneNumberForRemoval) {
     	
         int indexMarker = -1;
         
@@ -141,14 +134,7 @@ public class Phonebook {
         
         for(int i = 0; i < personArray.length; i++) {
         	
-            if((person.getFirstName().equals(personArray[i].getFirstName())) &&
-                    (person.getMiddleName().equals(personArray[i].getMiddleName())) &&
-                    (person.getLastName().equals(personArray[i].getLastName())) &&
-                    (person.getAddress().getStreetAddress().equals(personArray[0].getAddress().getStreetAddress())) &&
-                    (person.getAddress().getCity().equals(personArray[0].getAddress().getCity())) &&
-                    (person.getAddress().getState().equals(personArray[0].getAddress().getState())) &&
-                    (person.getAddress().getZipCode().equals(personArray[0].getAddress().getZipCode())) &&
-                    (person.getPhoneNumber().equals(personArray[i].getPhoneNumber()))) {
+            if(personArray[i].getPhoneNumber() == phoneNumberForRemoval) {
             	
                 indexMarker = i;
                 
@@ -250,7 +236,7 @@ public class Phonebook {
     	
     	if(!foundRecord) {
     		
-    		System.out.println("The phone number you entered did not match any records.");
+    		System.out.println("The first name you entered did not match any records.");
     		
     	}
     	
@@ -278,10 +264,96 @@ public class Phonebook {
     	
     	if(!foundRecord) {
     		
-    		System.out.println("The phone number you entered did not match any records.");
+    		System.out.println("The last name you entered did not match any records.");
     		
     	}
     	
+    }
+    
+    public void findRecordsByFullName(Person[] newPersonArray, String firstName, String middleName, String lastName) {
+    	
+    	boolean foundRecord = false;
+    	
+    	for(int i = 0; i < newPersonArray.length; i++) {
+    		
+    		if((firstName.equals(newPersonArray[i].getFirstName())) && 
+    				(middleName.equals(newPersonArray[i].getMiddleName())) && 
+    				(lastName.equals(newPersonArray[i].getLastName()))) {
+    			
+    			System.out.print(newPersonArray[i].getFirstName() + " ");
+    			System.out.print(newPersonArray[i].getMiddleName() + " ");
+    			System.out.print(newPersonArray[i].getLastName() + " ");
+    			System.out.print(newPersonArray[i].getAddress() + " ");
+    			System.out.print(newPersonArray[i].getPhoneNumber() + "\n\n");
+    			
+    			foundRecord = true;
+    			
+    		} 
+    		
+    	}
+    	
+    	if(!foundRecord) {
+    		
+    		System.out.println("The full name you entered did not match any records.");
+    		
+    	}
+    	
+    }
+    
+    public void findRecordsByCity(Person[] newPersonArray, String city) {
+    	
+    	boolean foundRecord = false;
+    	
+    	for(int i = 0; i < newPersonArray.length; i++) {
+    		
+    		if(newPersonArray[i].getAddress().getCity().equals(city)) {
+    			
+    			System.out.print(newPersonArray[i].getFirstName() + " ");
+    			System.out.print(newPersonArray[i].getMiddleName() + " ");
+    			System.out.print(newPersonArray[i].getLastName() + " ");
+    			System.out.print(newPersonArray[i].getAddress() + " ");
+    			System.out.print(newPersonArray[i].getPhoneNumber() + "\n\n");
+    			
+    			foundRecord = true;
+    			
+    		}
+    		
+    	}
+    	
+    	if(!foundRecord) {
+    		
+    		System.out.println("The city you entered did not match any records.");
+    		
+    	}
+    
+    }
+    
+    public void findRecordsByState(Person[] newPersonArray, String state) {
+    	
+    	boolean foundRecord = false;
+    	
+    	for(int i = 0; i < newPersonArray.length; i++) {
+    		
+    		if(newPersonArray[i].getAddress().getState().equals(state)) {
+    			
+    			System.out.print(newPersonArray[i].getFirstName() + " ");
+    			System.out.print(newPersonArray[i].getMiddleName() + " ");
+    			System.out.print(newPersonArray[i].getLastName() + " ");
+    			System.out.print(newPersonArray[i].getAddress() + " ");
+    			System.out.print(newPersonArray[i].getPhoneNumber() + "\n\n");
+    			
+    			foundRecord = true;
+    			
+    		}
+    		
+    	}
+    	
+    	if(!foundRecord) {
+    		
+    		System.out.println("The state you entered did not match any records.");
+    		
+    	}
+    
     }
     
 }
