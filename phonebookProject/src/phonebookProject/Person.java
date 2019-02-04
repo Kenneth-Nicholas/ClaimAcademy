@@ -10,6 +10,16 @@ public class Person {
 
     public Person() {
     	
+    	this.firstName = "";
+    	this.middleName = "";
+    	this.lastName = "";
+    	
+    	Address address = new Address();
+    	
+    	this.address = address;
+    	
+    	this.phoneNumber = "";
+    	
     }
 
     public Person(String firstName, String middleName, String lastName, Address address, String phoneNumber) {

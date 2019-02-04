@@ -46,8 +46,7 @@
 //
 //
 //
-// Just need to add option to update a record based on phone number (option 10)
-// and also need to add the option to display all records in ascending order (option 11)
+// Just need to fix sort algorithm so that it sorts records in ascending order by last name.
 
 
 package phonebookProject;
@@ -283,11 +282,60 @@ public class Main {
                 	
                 	// 9  - Update a record for a given phone number
                 	
+                	System.out.println("Enter a phone number in the following format in order to update a record \"111-333-7777\":\n");
+                	
+                	String phoneNumberForUpdating = input.nextLine();
+                	
+                	System.out.println();
+                	System.out.println("Enter the information that you would like the record listed under the phone number: " + phoneNumberForUpdating + " to be updated to.");
+                	System.out.println("\"FirstName MiddleName LastName, 1111 StreetName Drive, AmazingWeather City, CA, 77777, 111-777-1111\"\n");
+                	
+                    String recordHolder2 = input.nextLine();
+                    
+                    System.out.println();
+                    
+                    String[] recordData2 = new String[6];
+                    
+                    recordData2 = recordHolder2.split(", ");
+                    
+                    if(recordData2[5] == null) {
+                    	
+                        System.out.println("Error, you did not enter the record correctly.");
+                        
+                    }
+                    
+                    String nameHolder2 = recordData2[0];
+                    
+                    String[] nameData2 = new String[3];
+                    
+                    nameData2 = nameHolder2.split(" ");
+                    
+                    String firstName2 = nameData2[0];
+                    String middleName2 = nameData2[1];
+                    String lastName2 = nameData2[2];
+                    
+                    String streetAddress2 = recordData2[1];
+                    String city2 = recordData2[2];
+                    String state2 = recordData2[3];
+                    String zipCode2 = recordData2[4];
+                    
+                    String phoneNumber2 = recordData2[5];
+                    
+                    Address address2 = new Address(streetAddress2, city2, state2, zipCode2);
+                    
+                    Person personForUpdating = new Person(firstName2, middleName2, lastName2, address2, phoneNumber2);
+                	
+                	newPersonArray = phonebook.updateRecordByPhoneNumber(newPersonArray, phoneNumberForUpdating, personForUpdating);
+                	
                 	break;
                 	
                 case 10:
                 	
                 	// 10 - Show all records in ascending order
+                	
+                	// newPersonArray = phonebook.sortRecordsInAscendingOrderByLastName(newPersonArray);
+                	
+                	phonebook.displayAllRecords(newPersonArray);
                 	
                 	break;
                 	
