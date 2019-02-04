@@ -29,12 +29,26 @@ public class Phonebook {
     public Person[] addFirstPerson(Person person) {
     	
         Person[] newPersonArray = new Person[1];
-        newPersonArray[0] = person;
+        
+        Person tempPerson = new Person();
+        
+        newPersonArray[0] = tempPerson;
+        
         newPersonArray[0].setFirstName(person.getFirstName());
         newPersonArray[0].setMiddleName(person.getMiddleName());
         newPersonArray[0].setLastName(person.getLastName());
-        newPersonArray[0].setAddress(person.getAddress());
+        
+        String streetAddress = person.getAddress().getStreetAddress();
+        String city = person.getAddress().getCity();
+        String state = person.getAddress().getState();
+        String zipCode = person.getAddress().getZipCode();
+        
+        Address address = new Address(streetAddress, city, state, zipCode);
+        
+        newPersonArray[0].setAddress(address);
+        
         newPersonArray[0].setPhoneNumber(person.getPhoneNumber());
+        
         return newPersonArray;
         
     }
@@ -46,6 +60,7 @@ public class Phonebook {
             for(int i = 0; i < newPersonArray.length; i++) {
             	
             	Person newPerson = new Person();
+            	
             	newPersonArray[i] = newPerson;
             	
             }
@@ -55,12 +70,16 @@ public class Phonebook {
                 newPersonArray[i].setFirstName(personArray[i].getFirstName());
                 newPersonArray[i].setMiddleName(personArray[i].getMiddleName());
                 newPersonArray[i].setLastName(personArray[i].getLastName());
+                
                 String streetAddress = personArray[i].getAddress().getStreetAddress();
                 String city = personArray[i].getAddress().getCity();
                 String state = personArray[i].getAddress().getState();
                 String zipCode = personArray[i].getAddress().getZipCode();
+                
                 Address newAddress = new Address(streetAddress, city, state, zipCode);
+                
                 newPersonArray[i].setAddress(newAddress);;
+                
                 newPersonArray[i].setPhoneNumber(personArray[i].getPhoneNumber());
                 
             }
@@ -68,7 +87,16 @@ public class Phonebook {
             newPersonArray[personArray.length].setFirstName(person.getFirstName());
             newPersonArray[personArray.length].setMiddleName(person.getMiddleName());
             newPersonArray[personArray.length].setLastName(person.getLastName());
-            newPersonArray[personArray.length].setAddress(person.getAddress());
+            
+            String streetAddress = person.getAddress().getStreetAddress();
+            String city = person.getAddress().getCity();
+            String state = person.getAddress().getState();
+            String zipCode = person.getAddress().getZipCode();
+            
+            Address address = new Address(streetAddress, city, state, zipCode);
+            
+            newPersonArray[personArray.length].setAddress(address);
+            
             newPersonArray[personArray.length].setPhoneNumber(person.getPhoneNumber());
             
             return newPersonArray;
@@ -106,6 +134,7 @@ public class Phonebook {
         for(int i = 0; i < newPersonArray.length; i++) {
         	
         	Person newPerson = new Person();
+        	
         	newPersonArray[i] = newPerson;
         	
         }
@@ -115,6 +144,10 @@ public class Phonebook {
             if((person.getFirstName().equals(personArray[i].getFirstName())) &&
                     (person.getMiddleName().equals(personArray[i].getMiddleName())) &&
                     (person.getLastName().equals(personArray[i].getLastName())) &&
+                    (person.getAddress().getStreetAddress().equals(personArray[0].getAddress().getStreetAddress())) &&
+                    (person.getAddress().getCity().equals(personArray[0].getAddress().getCity())) &&
+                    (person.getAddress().getState().equals(personArray[0].getAddress().getState())) &&
+                    (person.getAddress().getZipCode().equals(personArray[0].getAddress().getZipCode())) &&
                     (person.getPhoneNumber().equals(personArray[i].getPhoneNumber()))) {
             	
                 indexMarker = i;
@@ -126,6 +159,7 @@ public class Phonebook {
         if(indexMarker == -1) {
         	
             System.out.println("The requested record could not be found.");
+            
             return personArray;
             
         }
@@ -143,7 +177,16 @@ public class Phonebook {
                     newPersonArray[i].setFirstName(personArray[i].getFirstName());
                     newPersonArray[i].setMiddleName(personArray[i].getMiddleName());
                     newPersonArray[i].setLastName(personArray[i].getLastName());
-                    newPersonArray[i].setAddress(personArray[i].getAddress());
+                    
+                    String streetAddress = personArray[i].getAddress().getStreetAddress();
+                    String city = personArray[i].getAddress().getCity();
+                    String state = personArray[i].getAddress().getState();
+                    String zipCode = personArray[i].getAddress().getZipCode();
+                    
+                    Address address = new Address(streetAddress, city, state, zipCode);
+                    
+                    newPersonArray[i].setAddress(address);
+                    
                     newPersonArray[i].setPhoneNumber(personArray[i].getPhoneNumber());  
                
                 }

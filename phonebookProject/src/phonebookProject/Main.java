@@ -96,15 +96,15 @@ public class Main {
                 case 1:
                 	
                     System.out.println("Add a new record by entering a person's information in the following format: ");
-                    System.out.println("FirstName MiddleName LastName, 1111 StreetName Drive, AmazingWeather City, CA, 77777, United States of America, 111-777-1111");
+                    System.out.println("FirstName MiddleName LastName, 1111 StreetName Drive, AmazingWeather City, CA, 77777, 111-777-1111");
                     
                     String recordHolder = input.nextLine();
                     
-                    String[] recordData = new String[7];
+                    String[] recordData = new String[6];
                     
                     recordData = recordHolder.split(", ");
                     
-                    if(recordData[6] == null) {
+                    if(recordData[5] == null) {
                     	
                         System.out.println("Error, you did not enter the record correctly.");
                         
