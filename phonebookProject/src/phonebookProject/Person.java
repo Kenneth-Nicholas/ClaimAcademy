@@ -1,6 +1,6 @@
 package phonebookProject;
 
-public class Person {
+public class Person implements Comparable<Person> {
 	
     private String firstName;
     private String middleName;
@@ -91,5 +91,24 @@ public class Person {
         this.phoneNumber = phoneNumber;
         
     }
+
+	@Override
+	public int compareTo(Person otherPerson) {
+		
+	    if(this.getLastName().charAt(0) > otherPerson.getLastName().charAt(0)) {
+	    	
+	        return 1;
+	    
+	    } else if (this.getLastName().charAt(0) == otherPerson.getLastName().charAt(0)) {
+	    	
+	        return 0;
+	        
+	    } else {    
+	    	
+	    return -1 ;
+	    
+	    }
+	    
+	}
     
 }

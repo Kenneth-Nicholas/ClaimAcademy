@@ -15,10 +15,6 @@
 // John Michael West Doe, 574 Pole ave, St. Peters, MO, 63333, 5628592375
 //
 // Searching for John should return a list of all 3 records above, displaying the telephone number in this order (636)-453-8563.
-// 
-//
-//
-// Just need to fix sort algorithm so that it sorts records in ascending order by last name.
 
 
 package phonebookProject;
@@ -27,6 +23,7 @@ import phonebookProject.Address;
 import phonebookProject.Person;
 import phonebookProject.Phonebook;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -71,9 +68,7 @@ public class Main {
             switch(selection) {
             
                 case 1:
-                	
-                	// 1 - Add a new record
-                	
+
                     System.out.println("Add a new record by entering a person's information in the following format:");
                     System.out.println("FirstName MiddleName LastName, 1111 StreetName Drive, AmazingWeather City, CA, 77777, (111)-777-1111\n");
                     
@@ -94,8 +89,16 @@ public class Main {
                     String nameHolder = recordData[0];
                     
                     String[] nameData = new String[3];
-                    
+
                     nameData = nameHolder.split(" ");
+                    
+                    if(nameData.length <= 2) {
+                    	
+                    	System.out.println("Error, you must enter a first name, middle name, and last name.\n");
+                    	
+                    	break;
+                    	
+                    }
                     
                     String firstName = nameData[0];
                     String middleName = nameData[1];
@@ -131,8 +134,6 @@ public class Main {
                 break;
                 
                 case 2:
-                	
-                    // 2  - Search for record by first name
 
                 	System.out.println("Enter a first name to find a record:\n");
                 	
@@ -146,8 +147,6 @@ public class Main {
                     
                 case 3:
                 	
-                    // 3  - Search for record by last name
-                	
                 	System.out.println("Enter a last name to find a record:\n");
                 	
                 	lastName = input.nextLine();
@@ -159,8 +158,6 @@ public class Main {
                     break;
                     
                 case 4:
-                	
-                	// 4  - Search for record by full name
                 	
                 	System.out.println("Enter a full name to find a record in the following format:");
                 	System.out.println("\"Firstname Middlename Lastname\"\n");
@@ -183,8 +180,6 @@ public class Main {
                     
                 case 5:
                 	
-                	// 5  - Search for record by phone number
-                	
                 	System.out.println("Enter a telephone to find a record:\n");
                 	
                 	phoneNumber = input.nextLine();
@@ -196,8 +191,6 @@ public class Main {
                     break;
                     
                 case 6:
-                	
-                	// 6  - Search for record by city
                 	
                 	System.out.println("Enter a city to find a record:\n");
                 	
@@ -211,8 +204,6 @@ public class Main {
                     
                 case 7:
                 	
-                	// 7  - Search for record by state
-                	
                 	System.out.println("Enter a state to find a record:\n");
                 	
                 	String stateForSearch = input.nextLine();
@@ -224,8 +215,6 @@ public class Main {
                     break;
                     
                 case 8:
-                	
-                	// 8  - Delete a record for a given phone number
                 	
                     System.out.println("Remove a record by entering a person's phone number in the following format: ");
                     System.out.println("(111)-777-1111\n");
@@ -251,8 +240,6 @@ public class Main {
                 	break;
 
                 case 9:
-                	
-                	// 9  - Update a record for a given phone number
                 	
                 	System.out.println("Enter a phone number in the following format in order to update a record \"(111)-333-7777\":\n");
                 	
@@ -303,9 +290,7 @@ public class Main {
                 	
                 case 10:
                 	
-                	// 10 - Show all records in ascending order
-                	
-                	// newPersonArray = phonebook.sortRecordsInAscendingOrderByLastName(newPersonArray);
+                	Arrays.sort(newPersonArray);
                 	
                 	phonebook.displayAllRecords(newPersonArray);
                 	
