@@ -14,9 +14,7 @@ public class Person implements Comparable<Person> {
     	this.middleName = "";
     	this.lastName = "";
     	
-    	Address address = new Address();
-    	
-    	this.address = address;
+    	this.address = new Address();;
     	
     	this.phoneNumber = "";
     	
