@@ -92,24 +92,48 @@ public class Person implements Comparable<Person> {
         
     }
 
-	@Override
-	public int compareTo(Person otherPerson) {
-		
-	    if(this.getLastName().charAt(0) > otherPerson.getLastName().charAt(0)) {
-	    	
-	        return 1;
-	    
-	    } else if (this.getLastName().charAt(0) == otherPerson.getLastName().charAt(0)) {
-	    	
-	        return 0;
-	        
-	    } else {    
-	    	
-	    return -1 ;
-	    
-	    }
-	    
-	}
+    @Override
+    public int compareTo(Person otherPerson) {
+
+    	if(this.getLastName().charAt(0) > otherPerson.getLastName().charAt(0)) {
+
+    		return 1;
+
+    	} else if (this.getLastName().charAt(0) == otherPerson.getLastName().charAt(0)) {
+
+    		if(this.getLastName().charAt(1) > otherPerson.getLastName().charAt(1)) {
+
+    			return 1;
+
+    		} else if (this.getLastName().charAt(1) == otherPerson.getLastName().charAt(1)) {
+
+    			if(this.getLastName().charAt(2) > otherPerson.getLastName().charAt(2)) {
+
+    				return 1;
+
+    			} else if(this.getLastName().charAt(2) == otherPerson.getLastName().charAt(2)) {
+
+    				return 0;
+
+    			} else {
+
+    				return - 1;
+
+    			}
+
+    		} else {
+
+    			return -1;
+
+    		}
+
+    	} else {    
+
+    		return -1 ;
+
+    	}
+
+    }
     
 	@Override
 	public String toString() {
