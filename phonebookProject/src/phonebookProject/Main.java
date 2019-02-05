@@ -7,15 +7,6 @@
 // In order to compare the contents of two objects instead of their references, you must overload the comparator.
 // Otherwise, using object.getThing().equals(objectArray[element].getThing()); will always return false because with
 // objects, it ends up comparing references, not the contents of the objects themselves.
-//
-// Test case input for the application:
-//
-// John Doe, 114 Market St, St Louis, MO, 63403, 6366435698
-// John E Doe, 324 Main St, St Charles, MO,63303, 8475390126
-// John Michael West Doe, 574 Pole ave, St. Peters, MO, 63333, 5628592375
-//
-// Searching for John should return a list of all 3 records above, displaying the telephone number in this order (636)-453-8563.
-
 
 package phonebookProject;
 

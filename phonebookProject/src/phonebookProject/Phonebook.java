@@ -449,5 +449,12 @@ public class Phonebook {
 		System.out.println();
 
 	}
+	
+	@Override
+	public String toString() {
+		
+		return personArray.toString();
+		
+	}
 
 }

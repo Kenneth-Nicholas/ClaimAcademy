@@ -111,4 +111,11 @@ public class Person implements Comparable<Person> {
 	    
 	}
     
+	@Override
+	public String toString() {
+		
+		return firstName + " " + middleName + " " + lastName + ", " + address.toString() + ", " + phoneNumber;
+		
+	}
+	
 }
