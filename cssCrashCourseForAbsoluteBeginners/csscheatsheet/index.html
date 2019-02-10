@@ -1,0 +1,189 @@
+<!-- 3 Methods For Adding CSS
+
+	 - Inline CSS: Directly in the html element (NO!)
+	 - Internal CSS: Using <style> tags within a signle document
+	 - External CSS: Linking an external .css file
+
+	 External is generally the best way to add CSS to a webpage, it's the most suggested method.
+
+	 The goal is to keep the presentation, functionality, and styling as separate as possible.
+
+	 Using an external CSS style sheet accomplishes this.
+
+	 This is done by creating a separate file with a .css extension, and then linking the file to whatever .html file you want to use that particular .css style sheet for.
+
+	 We will use the exteranl CSS method.
+
+	 An advantage: by using the external method, you can use a style sheet you make for multiple web pages.
+
+	-->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>CSS Cheat Sheet</title>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+
+	<div class="container">
+
+	<div class="box-1">
+
+		<h1>Hello World</h1>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	</div>
+
+	<div class="box-2">
+
+		<h1>A Site For Learning</h1>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<a class="button" href="">Read More</a>
+
+	</div>
+
+	<div class="categories">
+
+		<h2>Categories</h2>
+
+		<ul>
+
+			<li><a href="#test1.html">Category1</a></li>
+			<li><a href="#test2.html">Category2</a></li>
+			<li><a href="#test3.html">Category3</a></li>
+			<li><a href="#test4.html">Category4</a></li>
+
+		</ul>
+
+	</div>
+
+		<form class="my-form">
+
+			<div class="form-group">
+
+				<label>Name: </label>
+				<input type="text" name="name">
+
+			</div>
+
+			<div class="form-group">
+
+				<label>Email: </label>
+				<input type="text" name="email">
+
+			</div>
+
+			<div class="form-group">
+
+				<label>Message: </label>
+				<textarea name="message"></textarea>
+
+			</div>
+
+			<input class="button" type="submit" value="Submit" name="">
+
+		</form>
+
+		<div class="block">
+
+			<h3>Heading</h3>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		</div>
+
+		<div class="block">
+
+			<h3>Heading</h3>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			
+		</div>
+
+		<div class="block">
+
+			<h3>Heading</h3>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			
+		</div>
+
+		<div class="clr"></div>
+
+		<div id="main-block">
+
+			<h3>Heading</h3>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		</div>
+
+		<div id="sidebar">
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		</div>
+
+		<div class="clr"></div>
+
+		<div class="p-box">
+			
+			<h1>Hello</h1>
+			<h2>There</h2>
+
+		</div>
+
+	</div> <!-- end of container -->
+
+	<div style="margin-top: 500px;">
+
+	</div>
+
+</body>
+
+</html>
