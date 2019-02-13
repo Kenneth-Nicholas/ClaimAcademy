@@ -36,6 +36,12 @@ public class Application {
 		
 		student.saveToFile();
 		
+		Student studentFromFile = Student.readFromFile(emailAddress);
+		
+		System.out.println(studentFromFile);
+		
+		input.close();
+		
 	}
 
 }
